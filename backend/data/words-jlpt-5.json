@@ -1,0 +1,562 @@
+[
+  {
+    "kanji": "一",
+    "meanings": [
+      "one",
+      "1",
+      "best",
+      "first",
+      "foremost",
+      "beginning",
+      "start",
+      "a (single)",
+      "one (of many)",
+      "ace",
+      "bottom string (on a shamisen, etc.)"
+    ],
+    "readings": [
+      "いち",
+      "いち",
+      "いち",
+      "いち",
+      "いち"
+    ],
+    "jlpt": [
+      "jlpt-n5"
+    ],
+    "parts_of_speech": [
+      [
+        "Numeric",
+        "Prefix"
+      ],
+      [
+        "Noun which may take the genitive case particle 'no'",
+        "Suffix"
+      ],
+      [
+        "Noun which may take the genitive case particle 'no'"
+      ],
+      [
+        "Noun"
+      ],
+      [
+        "Noun, used as a prefix"
+      ],
+      [
+        "Noun"
+      ],
+      [
+        "Noun"
+      ]
+    ],
+    "examples": [
+      {
+        "text": "もう一回！",
+        "translations": [
+          "Lagi!"
+        ],
+        "html": "もう<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>回<rp>（</rp><rt>かい</rt><rp>）</rp></ruby>！"
+      },
+      {
+        "text": "一口どう？",
+        "translations": [
+          "Mau coba satu gigitan?"
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>ひと</rt><rp>）</rp></ruby><ruby>口<rp>（</rp><rt>くち</rt><rp>）</rp></ruby>どう？"
+      },
+      {
+        "text": "もう一度？",
+        "translations": [
+          "Lagi?"
+        ],
+        "html": "もう<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>度<rp>（</rp><rt>ど</rt><rp>）</rp></ruby>？"
+      },
+      {
+        "text": "一人だ。",
+        "translations": [
+          "Seorang."
+        ],
+        "html": "<ruby>一人<rp>（</rp><rt>ひとり</rt><rp>）</rp></ruby>だ。"
+      },
+      {
+        "text": "一杯どう？",
+        "translations": [
+          "Bagaimana kalau minuman?"
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>いっ</rt><rp>）</rp></ruby><ruby>杯<rp>（</rp><rt>ぱい</rt><rp>）</rp></ruby>どう？"
+      },
+      {
+        "text": "私が一番。",
+        "translations": [
+          "Aku yang pertama."
+        ],
+        "html": "<ruby>私<rp>（</rp><rt>わたし</rt><rp>）</rp></ruby>が<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>番<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby>。"
+      },
+      {
+        "text": "もう一回。",
+        "translations": [
+          "Datang lagi?"
+        ],
+        "html": "もう<ruby>一<rp>（</rp><rt>いっ</rt><rp>）</rp></ruby><ruby>回<rp>（</rp><rt>かい</rt><rp>）</rp></ruby>。"
+      },
+      {
+        "text": "一石二鳥。",
+        "translations": [
+          "Membunuh dua burung dengan satu kerikil.",
+          "Sekali dayung, dua tiga pulau terlampaui.",
+          "Sambil menyelam minum air."
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>いっ</rt><rp>）</rp></ruby><ruby>石<rp>（</rp><rt>せき</rt><rp>）</rp></ruby><ruby>二<rp>（</rp><rt>に</rt><rp>）</rp></ruby><ruby>鳥<rp>（</rp><rt>ちょう</rt><rp>）</rp></ruby>。"
+      },
+      {
+        "text": "我が家が一番！",
+        "translations": [
+          "Hujan emas di negeri orang, hujan batu di negeri sendiri, baik jua di negeri sendiri.",
+          "Rumahku istanaku."
+        ],
+        "html": "<ruby>我<rp>（</rp><rt>わ</rt><rp>）</rp></ruby>が<ruby>家<rp>（</rp><rt>や</rt><rp>）</rp></ruby>が<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>番<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby>！"
+      },
+      {
+        "text": "一人にしてよ！",
+        "translations": [
+          "Tinggalkan aku sendiri!"
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>ひと</rt><rp>）</rp></ruby><ruby>人<rp>（</rp><rt>り</rt><rp>）</rp></ruby>にしてよ！"
+      }
+    ]
+  },
+  {
+    "kanji": "人-2",
+    "meanings": [
+      "person",
+      "someone",
+      "somebody",
+      "human beings",
+      "mankind",
+      "man",
+      "people",
+      "humans",
+      "human (Homo sapiens)",
+      "(other) people",
+      "others",
+      "character",
+      "personality",
+      "nature",
+      "capable person",
+      "competent person",
+      "suitable person",
+      "right person",
+      "adult",
+      "grown-up",
+      "I",
+      "me",
+      "one"
+    ],
+    "readings": [
+      "ひと",
+      "ヒト"
+    ],
+    "jlpt": [
+      "jlpt-n5"
+    ],
+    "parts_of_speech": [
+      [
+        "Noun"
+      ],
+      [
+        "Noun"
+      ],
+      [
+        "Noun"
+      ],
+      [
+        "Noun"
+      ],
+      [
+        "Noun"
+      ],
+      [
+        "Noun"
+      ],
+      [
+        "Noun"
+      ],
+      [
+        "Noun"
+      ]
+    ],
+    "examples": [
+      {
+        "text": "一人だ。",
+        "translations": [
+          "Seorang."
+        ],
+        "html": "<ruby>一人<rp>（</rp><rt>ひとり</rt><rp>）</rp></ruby>だ。"
+      },
+      {
+        "text": "あの人誰？",
+        "translations": [
+          "Siapa orang itu?"
+        ],
+        "html": "あの<ruby>人<rp>（</rp><rt>ひと</rt><rp>）</rp></ruby><ruby>誰<rp>（</rp><rt>だれ</rt><rp>）</rp></ruby>？"
+      },
+      {
+        "text": "一人にしてよ！",
+        "translations": [
+          "Tinggalkan aku sendiri!"
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>ひと</rt><rp>）</rp></ruby><ruby>人<rp>（</rp><rt>り</rt><rp>）</rp></ruby>にしてよ！"
+      },
+      {
+        "text": "韓国人です。",
+        "translations": [
+          "Aku orang Korea.",
+          "Saya orang Korea."
+        ],
+        "html": "<ruby>韓<rp>（</rp><rt>かん</rt><rp>）</rp></ruby><ruby>国<rp>（</rp><rt>こく</rt><rp>）</rp></ruby><ruby>人<rp>（</rp><rt>じん</rt><rp>）</rp></ruby>です。"
+      },
+      {
+        "text": "新人さんなの？",
+        "translations": [
+          "Kamu orang baru?"
+        ],
+        "html": "<ruby>新<rp>（</rp><rt>しん</rt><rp>）</rp></ruby><ruby>人<rp>（</rp><rt>じん</rt><rp>）</rp></ruby>さんなの？"
+      },
+      {
+        "text": "妹は美人だ。",
+        "translations": [
+          "Adikku cantik."
+        ],
+        "html": "<ruby>妹<rp>（</rp><rt>いもうと</rt><rp>）</rp></ruby>は<ruby>美<rp>（</rp><rt>び</rt><rp>）</rp></ruby><ruby>人<rp>（</rp><rt>じん</rt><rp>）</rp></ruby>だ。"
+      },
+      {
+        "text": "私は人間だ。",
+        "translations": [
+          "Aku adalah manusia.",
+          "Saya manusia."
+        ],
+        "html": "<ruby>私<rp>（</rp><rt>わたし</rt><rp>）</rp></ruby>は<ruby>人<rp>（</rp><rt>にん</rt><rp>）</rp></ruby><ruby>間<rp>（</rp><rt>げん</rt><rp>）</rp></ruby>だ。"
+      },
+      {
+        "text": "何人死んだの？",
+        "translations": [
+          "Berapa banyak orang yang mati?"
+        ],
+        "html": "<ruby>何<rp>（</rp><rt>なん</rt><rp>）</rp></ruby><ruby>人<rp>（</rp><rt>にん</rt><rp>）</rp></ruby><ruby>死<rp>（</rp><rt>し</rt><rp>）</rp></ruby>んだの？"
+      },
+      {
+        "text": "俺は人間だ。",
+        "translations": [
+          "Aku adalah manusia.",
+          "Aku laki-laki.",
+          "Aku orang.",
+          "Saya manusia."
+        ],
+        "html": "<ruby>俺<rp>（</rp><rt>おれ</rt><rp>）</rp></ruby>は<ruby>人<rp>（</rp><rt>にん</rt><rp>）</rp></ruby><ruby>間<rp>（</rp><rt>げん</rt><rp>）</rp></ruby>だ。"
+      },
+      {
+        "text": "美人だなあ。",
+        "translations": [
+          "Cantiknya.",
+          "Dia cantik."
+        ],
+        "html": "<ruby>美<rp>（</rp><rt>び</rt><rp>）</rp></ruby><ruby>人<rp>（</rp><rt>じん</rt><rp>）</rp></ruby>だなあ。"
+      }
+    ]
+  },
+  {
+    "kanji": "万-1",
+    "meanings": [
+      "10,000",
+      "ten thousand",
+      "myriad",
+      "everything",
+      "all",
+      "various"
+    ],
+    "readings": [
+      "まん",
+      "よろず",
+      "まん",
+      "よろず"
+    ],
+    "jlpt": [
+      "jlpt-n5"
+    ],
+    "parts_of_speech": [
+      [
+        "Numeric"
+      ],
+      [
+        "Noun",
+        "Noun which may take the genitive case particle 'no'"
+      ],
+      [
+        "Noun",
+        "Adverb (fukushi)"
+      ],
+      [
+        "Noun",
+        "Noun which may take the genitive case particle 'no'"
+      ]
+    ],
+    "examples": [
+      {
+        "text": "万歳！",
+        "translations": [
+          "Hore!"
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>歳<rp>（</rp><rt>ざい</rt><rp>）</rp></ruby>！"
+      },
+      {
+        "text": "万事よろしい。",
+        "translations": [
+          "Semua baik-baik saja.",
+          "Semuanya baik-baik saja."
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>事<rp>（</rp><rt>じ</rt><rp>）</rp></ruby>よろしい。"
+      },
+      {
+        "text": "一万円貸してくれない？",
+        "translations": [
+          "Bisakah kau meminjamkanku 10.000 yen?"
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>万<rp>（</rp><rt>まん</rt><rp>）</rp></ruby><ruby>円<rp>（</rp><rt>えん</rt><rp>）</rp></ruby><ruby>貸<rp>（</rp><rt>か</rt><rp>）</rp></ruby>してくれない？"
+      },
+      {
+        "text": "万事が金の世の中だ。",
+        "translations": [
+          "Uang adalah segalanya."
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>事<rp>（</rp><rt>じ</rt><rp>）</rp></ruby>が<ruby>金<rp>（</rp><rt>かね</rt><rp>）</rp></ruby>の<ruby>世<rp>（</rp><rt>よ</rt><rp>）</rp></ruby>の<ruby>中<rp>（</rp><rt>なか</rt><rp>）</rp></ruby>だ。"
+      },
+      {
+        "text": "私の名前は万理夏です。",
+        "translations": [
+          "Nama saya Marina."
+        ],
+        "html": "<ruby>私<rp>（</rp><rt>わたし</rt><rp>）</rp></ruby>の<ruby>名<rp>（</rp><rt>な</rt><rp>）</rp></ruby><ruby>前<rp>（</rp><rt>まえ</rt><rp>）</rp></ruby>は<ruby>万<rp>（</rp><rt>ま</rt><rp>）</rp></ruby><ruby>理<rp>（</rp><rt>り</rt><rp>）</rp></ruby><ruby>夏<rp>（</rp><rt>な</rt><rp>）</rp></ruby>です。"
+      },
+      {
+        "text": "万事上手くいってます。",
+        "translations": [
+          "Semua baik-baik saja.",
+          "Semuanya baik-baik saja."
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>事<rp>（</rp><rt>じ</rt><rp>）</rp></ruby><ruby>上手<rp>（</rp><rt>うま</rt><rp>）</rp></ruby>くいってます。"
+      },
+      {
+        "text": "このコートは一万円です。",
+        "translations": [
+          "Jas ini harganya sepuluh ribu yen."
+        ],
+        "html": "このコートは<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>万<rp>（</rp><rt>まん</rt><rp>）</rp></ruby><ruby>円<rp>（</rp><rt>えん</rt><rp>）</rp></ruby>です。"
+      },
+      {
+        "text": "万国の労働者よ。団結せよ！",
+        "translations": [
+          "Kaum buruh sedunia, bersatulah!"
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>国<rp>（</rp><rt>こく</rt><rp>）</rp></ruby>の<ruby>労<rp>（</rp><rt>ろう</rt><rp>）</rp></ruby><ruby>働<rp>（</rp><rt>どう</rt><rp>）</rp></ruby><ruby>者<rp>（</rp><rt>しゃ</rt><rp>）</rp></ruby>よ。<ruby>団<rp>（</rp><rt>だん</rt><rp>）</rp></ruby><ruby>結<rp>（</rp><rt>けつ</rt><rp>）</rp></ruby>せよ！"
+      },
+      {
+        "text": "これは100万円の価値がある。",
+        "translations": [
+          "Ini senilai satu juta yen."
+        ],
+        "html": "これは<ruby>100<rp>（</rp><rt>ひゃく</rt><rp>）</rp></ruby><ruby>万<rp>（</rp><rt>まん</rt><rp>）</rp></ruby><ruby>円<rp>（</rp><rt>えん</rt><rp>）</rp></ruby>の<ruby>価<rp>（</rp><rt>か</rt><rp>）</rp></ruby><ruby>値<rp>（</rp><rt>ち</rt><rp>）</rp></ruby>がある。"
+      },
+      {
+        "text": "一万円貸してくれませんか。",
+        "translations": [
+          "Bisakah kau meminjamkanku 10.000 yen?"
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>万<rp>（</rp><rt>まん</rt><rp>）</rp></ruby><ruby>円<rp>（</rp><rt>えん</rt><rp>）</rp></ruby><ruby>貸<rp>（</rp><rt>か</rt><rp>）</rp></ruby>してくれませんか。"
+      }
+    ]
+  },
+  {
+    "kanji": "七",
+    "meanings": [
+      "seven"
+    ],
+    "readings": [
+      "しち",
+      "なな",
+      "ひち",
+      "な",
+      "しち",
+      "なな",
+      "ひち",
+      "な",
+      "しち",
+      "なな",
+      "ひち",
+      "な"
+    ],
+    "jlpt": [
+      "jlpt-n3",
+      "jlpt-n5"
+    ],
+    "parts_of_speech": [
+      [
+        "Numeric"
+      ]
+    ],
+    "examples": [
+      {
+        "text": "私は七時半に起きます。",
+        "translations": [
+          "Saya bangun jam setengah delapan."
+        ],
+        "html": "<ruby>私<rp>（</rp><rt>わたし</rt><rp>）</rp></ruby>は<ruby>七<rp>（</rp><rt>しち</rt><rp>）</rp></ruby><ruby>時<rp>（</rp><rt>じ</rt><rp>）</rp></ruby><ruby>半<rp>（</rp><rt>はん</rt><rp>）</rp></ruby>に<ruby>起<rp>（</rp><rt>お</rt><rp>）</rp></ruby>きます。"
+      },
+      {
+        "text": "一、二、三、四、五、六、七、八、九、十。",
+        "translations": [
+          "Satu, dua, tiga, empat, lima, enam, tujuh, delapan, sembilan, sepuluh."
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby>、<ruby>二<rp>（</rp><rt>に</rt><rp>）</rp></ruby>、<ruby>三<rp>（</rp><rt>さん</rt><rp>）</rp></ruby>、<ruby>四<rp>（</rp><rt>よん</rt><rp>）</rp></ruby>、<ruby>五<rp>（</rp><rt>ご</rt><rp>）</rp></ruby>、<ruby>六<rp>（</rp><rt>ろく</rt><rp>）</rp></ruby>、<ruby>七<rp>（</rp><rt>なな</rt><rp>）</rp></ruby>、<ruby>八<rp>（</rp><rt>はち</rt><rp>）</rp></ruby>、<ruby>九<rp>（</rp><rt>きゅう</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby>。"
+      },
+      {
+        "text": "零、一、二、三、四、五、六、七、八、九、十。",
+        "translations": [
+          "Nol, satu, dua, tiga, empat, lima, enam, tujuh, delapan, sembilan, sepuluh."
+        ],
+        "html": "<ruby>零<rp>（</rp><rt>れい</rt><rp>）</rp></ruby>、<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby>、<ruby>二<rp>（</rp><rt>に</rt><rp>）</rp></ruby>、<ruby>三<rp>（</rp><rt>さん</rt><rp>）</rp></ruby>、<ruby>四<rp>（</rp><rt>よん</rt><rp>）</rp></ruby>、<ruby>五<rp>（</rp><rt>ご</rt><rp>）</rp></ruby>、<ruby>六<rp>（</rp><rt>ろく</rt><rp>）</rp></ruby>、<ruby>七<rp>（</rp><rt>なな</rt><rp>）</rp></ruby>、<ruby>八<rp>（</rp><rt>はち</rt><rp>）</rp></ruby>、<ruby>九<rp>（</rp><rt>きゅう</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby>。"
+      },
+      {
+        "text": "百、二百、三百、四百、五百、六百、七百、八百、九百、千。",
+        "translations": [
+          "Seratus, dua ratus, tiga ratus, empat ratus, lima ratus, enam ratus, tujuh ratus, delapan ratus, sembilan ratus, seribu."
+        ],
+        "html": "<ruby>百<rp>（</rp><rt>ひゃく</rt><rp>）</rp></ruby>、<ruby>二<rp>（</rp><rt>に</rt><rp>）</rp></ruby><ruby>百<rp>（</rp><rt>ひゃく</rt><rp>）</rp></ruby>、<ruby>三<rp>（</rp><rt>さん</rt><rp>）</rp></ruby><ruby>百<rp>（</rp><rt>びゃく</rt><rp>）</rp></ruby>、<ruby>四<rp>（</rp><rt>よん</rt><rp>）</rp></ruby><ruby>百<rp>（</rp><rt>ひゃく</rt><rp>）</rp></ruby>、<ruby>五<rp>（</rp><rt>ご</rt><rp>）</rp></ruby><ruby>百<rp>（</rp><rt>ひゃく</rt><rp>）</rp></ruby>、<ruby>六<rp>（</rp><rt>ろっ</rt><rp>）</rp></ruby><ruby>百<rp>（</rp><rt>ぴゃく</rt><rp>）</rp></ruby>、<ruby>七<rp>（</rp><rt>なな</rt><rp>）</rp></ruby><ruby>百<rp>（</rp><rt>ひゃく</rt><rp>）</rp></ruby>、<ruby>八<rp>（</rp><rt>はっ</rt><rp>）</rp></ruby><ruby>百<rp>（</rp><rt>ぴゃく</rt><rp>）</rp></ruby>、<ruby>九<rp>（</rp><rt>きゅう</rt><rp>）</rp></ruby><ruby>百<rp>（</rp><rt>ひゃく</rt><rp>）</rp></ruby>、<ruby>千<rp>（</rp><rt>せん</rt><rp>）</rp></ruby>。"
+      },
+      {
+        "text": "一つ、二つ、三つ、四つ、五つ、六つ、七つ、八つ、九つ、十。",
+        "translations": [
+          "Satu, dua, tiga, empat, lima, enam, tujuh, delapan, sembilan, sepuluh."
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>ひと</rt><rp>）</rp></ruby>つ、<ruby>二<rp>（</rp><rt>ふた</rt><rp>）</rp></ruby>つ、<ruby>三<rp>（</rp><rt>みっ</rt><rp>）</rp></ruby>つ、<ruby>四<rp>（</rp><rt>よっ</rt><rp>）</rp></ruby>つ、<ruby>五<rp>（</rp><rt>いつ</rt><rp>）</rp></ruby>つ、<ruby>六<rp>（</rp><rt>むっ</rt><rp>）</rp></ruby>つ、<ruby>七<rp>（</rp><rt>なな</rt><rp>）</rp></ruby>つ、<ruby>八<rp>（</rp><rt>やっ</rt><rp>）</rp></ruby>つ、<ruby>九<rp>（</rp><rt>ここの</rt><rp>）</rp></ruby>つ、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby>。"
+      },
+      {
+        "text": "十、十一、十二、十三、十四、十五、十六、十七、十八、十九、二十。",
+        "translations": [
+          "Sepuluh, sebelas, dua belas, tiga belas, empat belas, lima belas, enam belas, tujuh belas, delapan belas, sembilan belas, dua puluh."
+        ],
+        "html": "<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby><ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby><ruby>二<rp>（</rp><rt>に</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby><ruby>三<rp>（</rp><rt>さん</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby><ruby>四<rp>（</rp><rt>よん</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby><ruby>五<rp>（</rp><rt>ご</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby><ruby>六<rp>（</rp><rt>ろく</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby><ruby>七<rp>（</rp><rt>なな</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby><ruby>八<rp>（</rp><rt>はち</rt><rp>）</rp></ruby>、<ruby>十<rp>（</rp><rt>じゅっ</rt><rp>）</rp></ruby><ruby>九<rp>（</rp><rt>く</rt><rp>）</rp></ruby>、<ruby>二<rp>（</rp><rt>に</rt><rp>）</rp></ruby><ruby>十<rp>（</rp><rt>じゅう</rt><rp>）</rp></ruby>。"
+      }
+    ]
+  },
+  {
+    "kanji": "万-1",
+    "meanings": [
+      "10,000",
+      "ten thousand",
+      "myriad",
+      "everything",
+      "all",
+      "various"
+    ],
+    "readings": [
+      "まん",
+      "よろず",
+      "まん",
+      "よろず"
+    ],
+    "jlpt": [
+      "jlpt-n5"
+    ],
+    "parts_of_speech": [
+      [
+        "Numeric"
+      ],
+      [
+        "Noun",
+        "Noun which may take the genitive case particle 'no'"
+      ],
+      [
+        "Noun",
+        "Adverb (fukushi)"
+      ],
+      [
+        "Noun",
+        "Noun which may take the genitive case particle 'no'"
+      ]
+    ],
+    "examples": [
+      {
+        "text": "万歳！",
+        "translations": [
+          "Hore!"
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>歳<rp>（</rp><rt>ざい</rt><rp>）</rp></ruby>！"
+      },
+      {
+        "text": "万事よろしい。",
+        "translations": [
+          "Semua baik-baik saja.",
+          "Semuanya baik-baik saja."
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>事<rp>（</rp><rt>じ</rt><rp>）</rp></ruby>よろしい。"
+      },
+      {
+        "text": "一万円貸してくれない？",
+        "translations": [
+          "Bisakah kau meminjamkanku 10.000 yen?"
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>万<rp>（</rp><rt>まん</rt><rp>）</rp></ruby><ruby>円<rp>（</rp><rt>えん</rt><rp>）</rp></ruby><ruby>貸<rp>（</rp><rt>か</rt><rp>）</rp></ruby>してくれない？"
+      },
+      {
+        "text": "万事が金の世の中だ。",
+        "translations": [
+          "Uang adalah segalanya."
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>事<rp>（</rp><rt>じ</rt><rp>）</rp></ruby>が<ruby>金<rp>（</rp><rt>かね</rt><rp>）</rp></ruby>の<ruby>世<rp>（</rp><rt>よ</rt><rp>）</rp></ruby>の<ruby>中<rp>（</rp><rt>なか</rt><rp>）</rp></ruby>だ。"
+      },
+      {
+        "text": "私の名前は万理夏です。",
+        "translations": [
+          "Nama saya Marina."
+        ],
+        "html": "<ruby>私<rp>（</rp><rt>わたし</rt><rp>）</rp></ruby>の<ruby>名<rp>（</rp><rt>な</rt><rp>）</rp></ruby><ruby>前<rp>（</rp><rt>まえ</rt><rp>）</rp></ruby>は<ruby>万<rp>（</rp><rt>ま</rt><rp>）</rp></ruby><ruby>理<rp>（</rp><rt>り</rt><rp>）</rp></ruby><ruby>夏<rp>（</rp><rt>な</rt><rp>）</rp></ruby>です。"
+      },
+      {
+        "text": "万事上手くいってます。",
+        "translations": [
+          "Semua baik-baik saja.",
+          "Semuanya baik-baik saja."
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>事<rp>（</rp><rt>じ</rt><rp>）</rp></ruby><ruby>上手<rp>（</rp><rt>うま</rt><rp>）</rp></ruby>くいってます。"
+      },
+      {
+        "text": "このコートは一万円です。",
+        "translations": [
+          "Jas ini harganya sepuluh ribu yen."
+        ],
+        "html": "このコートは<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>万<rp>（</rp><rt>まん</rt><rp>）</rp></ruby><ruby>円<rp>（</rp><rt>えん</rt><rp>）</rp></ruby>です。"
+      },
+      {
+        "text": "万国の労働者よ。団結せよ！",
+        "translations": [
+          "Kaum buruh sedunia, bersatulah!"
+        ],
+        "html": "<ruby>万<rp>（</rp><rt>ばん</rt><rp>）</rp></ruby><ruby>国<rp>（</rp><rt>こく</rt><rp>）</rp></ruby>の<ruby>労<rp>（</rp><rt>ろう</rt><rp>）</rp></ruby><ruby>働<rp>（</rp><rt>どう</rt><rp>）</rp></ruby><ruby>者<rp>（</rp><rt>しゃ</rt><rp>）</rp></ruby>よ。<ruby>団<rp>（</rp><rt>だん</rt><rp>）</rp></ruby><ruby>結<rp>（</rp><rt>けつ</rt><rp>）</rp></ruby>せよ！"
+      },
+      {
+        "text": "これは100万円の価値がある。",
+        "translations": [
+          "Ini senilai satu juta yen."
+        ],
+        "html": "これは<ruby>100<rp>（</rp><rt>ひゃく</rt><rp>）</rp></ruby><ruby>万<rp>（</rp><rt>まん</rt><rp>）</rp></ruby><ruby>円<rp>（</rp><rt>えん</rt><rp>）</rp></ruby>の<ruby>価<rp>（</rp><rt>か</rt><rp>）</rp></ruby><ruby>値<rp>（</rp><rt>ち</rt><rp>）</rp></ruby>がある。"
+      },
+      {
+        "text": "一万円貸してくれませんか。",
+        "translations": [
+          "Bisakah kau meminjamkanku 10.000 yen?"
+        ],
+        "html": "<ruby>一<rp>（</rp><rt>いち</rt><rp>）</rp></ruby><ruby>万<rp>（</rp><rt>まん</rt><rp>）</rp></ruby><ruby>円<rp>（</rp><rt>えん</rt><rp>）</rp></ruby><ruby>貸<rp>（</rp><rt>か</rt><rp>）</rp></ruby>してくれませんか。"
+      }
+    ]
+  }
+]
