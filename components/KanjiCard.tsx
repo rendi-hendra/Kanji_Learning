@@ -29,7 +29,7 @@ export function KanjiCard({
         <div className="text-6xl mb-2">{kanji}</div>
         <div className="flex justify-center gap-2">
           <Badge variant="outline">N{jlpt}</Badge>
-          <Badge variant="outline">strokes {stroke_count}</Badge>
+          <Badge variant="outline">{stroke_count} strokes</Badge>
         </div>
       </CardHeader>
       <CardContent className="text-center space-y-3">

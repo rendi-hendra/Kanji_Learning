@@ -9,6 +9,7 @@ import { BookOpen, Play } from "lucide-react";
 import { Kanji, ResponseWords } from "./lib/mockKanjiData";
 import { instance } from "./lib/api";
 import { Card, CardContent } from "@/components/ui/card";
+import axios from "axios";
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,29 +17,55 @@ export default function App() {
   const [selectedKanji, setSelectedKanji] = useState<Kanji | null>(null);
   const [practiceMode, setPracticeMode] = useState(false);
   const [words, setWords] = useState<ResponseWords>();
-  const [kanjis, setKanjis] = useState<Kanji | null>(null);
   const [kanjiList, setKanjiList] = useState<Kanji[]>([]);
+  const [audios, setAudios] = useState<(string | null)[]>([]); // array Blob URL audio
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     instance.get<Kanji[]>("/kanji/level/jlpt-5").then((res) => {
-      // console.log(res.data);
       setKanjiList(res.data);
     });
-  }, []);
+
+    if (!words?.examples) return;
+
+    setLoading(true);
+    const fetchAudios = async () => {
+      const audioUrls = await Promise.all(
+        words.examples.map(async (example) => {
+          try {
+            // console.log(example.text);
+            const res = await axios.post(
+              `http://localhost:8080/api/audio/${example.text}`, // contoh: "もう一回"
+              null,
+              { responseType: "arraybuffer" }
+            );
+            const blob = new Blob([res.data], { type: "audio/wav" });
+            return URL.createObjectURL(blob); // hasil blob audio
+          } catch (err) {
+            console.error("Gagal ambil audio:", err);
+            return null;
+          }
+        })
+      ).finally(() => {
+        console.log("Audio Sudah Selesai");
+        setLoading(false);
+      });
+      setAudios(audioUrls);
+    };
+
+    fetchAudios();
+
+    return () => {
+      // cleanup jika ada audio URL sebelumnya
+      audios.forEach((url) => url && URL.revokeObjectURL(url));
+    };
+  }, [words]);
 
   function handleKanjiClick(kanji: Kanji) {
-    instance.get(`/words/${kanji.kanji}`).then((res) => {
-      console.log(res.data);
-    });
     setSelectedKanji(kanji);
-    // Promise.all([
-    //   instance.get(`/kanji/${kanji.kanji}`),
-    //   instance.get<ResponseWords>(`/words/${kanji.kanji}`),
-    // ]).then(([kanjiRes, wordsRes]) => {
-    //   setKanjis(kanjiRes.data);
-    //   setWords(wordsRes.data);
-    //   setSelectedKanji(kanji);
-    // });
+    instance.get(`/words/${kanji.kanji}`).then((res) => {
+      setWords(res.data);
+    });
   }
 
   const filteredKanji = useMemo(() => {
@@ -57,7 +84,8 @@ export default function App() {
         );
 
       const matchesLevel =
-        selectedLevel === "all" || kanji.jlpt.toString() === selectedLevel;
+        selectedLevel === "all" ||
+        "N" + kanji.jlpt.toString() === selectedLevel;
 
       return matchesSearch && matchesLevel;
     });
@@ -125,7 +153,21 @@ export default function App() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-20 mt-10">
           {words?.examples.map((example, index) => (
-            <Card key={index}>
+            <Card
+              key={index}
+              className={
+                loading
+                  ? "cursor-not-allowed hover:shadow-lg transition-shadow duration-200 bg-gray-300"
+                  : "cursor-pointer hover:shadow-lg transition-shadow duration-200"
+              }
+              onClick={() => {
+                const url = audios[index];
+                if (url && !loading) {
+                  const audio = new Audio(url);
+                  audio.play();
+                }
+              }}
+            >
               <CardContent className="mt-4">
                 <div
                   className="text-primary font-bold text-5xl mb-5"

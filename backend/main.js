@@ -9,6 +9,14 @@ import fs from "fs";
 const port = 8080;
 app.use(cors());
 
+import { createClient } from "redis";
+
+const client = createClient();
+
+client.on("error", (err) => console.log("Redis Client Error", err));
+
+await client.connect();
+
 // const jisho = new JishoAPI();
 
 // import { Credentials, Translator } from "@translated/lara";
@@ -34,128 +42,113 @@ app.use(cors());
 //   }
 // });
 
-// app.get("/api/words/:word", async (req, res) => {
-//   // const kanjiapi = "https://kanjiapi.dev/v1";
-//   const jisho = "https://jisho.org/api/v1/search/words";
-//   const tatoeba = "https://tatoeba.org/en/api_v0/search";
+app.post("/api/audio/:text", async (req, res) => {
+  const baseURL = "http://127.0.0.1:50021";
+  const speaker = 2;
+  const text = req.params.text;
 
-//   try {
-//     const resJisho = await axios.get(jisho, {
-//       headers: {
-//         "User-Agent":
-//           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
-//         Accept: "application/json, text/plain, */*",
-//       },
-//       params: {
-//         keyword: req.params.word,
-//       },
-//     });
+  try {
+    // ✅ Cek dari Redis
+    const cacheRaw = await client.get(`audio:${text}`);
+    const cache = cacheRaw ? Buffer.from(cacheRaw, "base64") : null;
 
-//     const resTatoeba = await axios.get(tatoeba, {
-//       params: {
-//         from: "jpn",
-//         to: "ind",
-//         query: req.params.word,
-//       },
-//     });
+    if (cache) {
+      res.setHeader("Content-Type", "audio/wav");
+      return res.send(cache);
+    }
 
-//     const result = {
-//       kanji: resJisho.data.data[0].slug,
-//       meanings: resJisho.data.data[0].senses
-//         .map((sense) => sense.english_definitions)
-//         .flat(),
-//       readings: resJisho.data.data[0].japanese.map(
-//         (japanese) => japanese.reading
-//       ),
-//       jlpt: resJisho.data.data[0].jlpt,
-//       parts_of_speech: resJisho.data.data[0].senses.map(
-//         (sense) => sense.parts_of_speech
-//       ),
+    // 🔄 Generate audio
+    const audioQueryRes = await axios.post(`${baseURL}/audio_query`, null, {
+      params: { text, speaker },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    });
 
-//       examples: resTatoeba.data.results.map((result) => ({
-//         text: result.text,
-//         translations: result.translations
-//           .flat()
-//           .map((translation) => translation.text),
-//         html: result.transcriptions[0].html,
-//         // transcriptions: result.transcriptions.map((transcription) => ({
-//         //   text: transcription.html,
-//         // })),
-//       })),
-//     };
+    const synthRes = await axios.post(
+      `${baseURL}/synthesis`,
+      audioQueryRes.data,
+      {
+        params: { speaker },
+        responseType: "arraybuffer",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
 
-//     res.send(result);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// });
+    const audioBuffer = Buffer.from(synthRes.data);
+
+    // ✅ Simpan ke Redis (pakai base64)
+    await client.set(`audio:${text}`, audioBuffer.toString("base64"), {
+      EX: 60 * 60 * 24, // expire 1 hari
+    });
+
+    res.setHeader("Content-Type", "audio/wav");
+    res.send(audioBuffer);
+  } catch (error) {
+    console.error("❌ Gagal:", error);
+    res.status(500).send("Gagal mengambil audio");
+  }
+});
 
 app.get("/api/words/:word", async (req, res) => {
   // const kanjiapi = "https://kanjiapi.dev/v1";
   const jisho = "https://jisho.org/api/v1/search/words";
   const tatoeba = "https://tatoeba.org/en/api_v0/search";
-  const filePath = "./data/words-jlpt-5.json";
+
+  // 2. Cek apakah sudah ada kanji yang sama
 
   try {
-    const resJisho = await axios.get(jisho, {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
-        Accept: "application/json, text/plain, */*",
-      },
-      params: {
-        keyword: req.params.word,
-      },
+    const words = await client.sInter("words");
+
+    const alreadyExists = words.some((entry) => {
+      const parsed = JSON.parse(entry);
+      return parsed.kanji === req.params.word;
     });
+    if (!alreadyExists) {
+      const resJisho = await axios.get(jisho, {
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+          Accept: "application/json, text/plain, */*",
+        },
+        params: {
+          keyword: req.params.word,
+        },
+      });
 
-    const resTatoeba = await axios.get(tatoeba, {
-      params: {
-        from: "jpn",
-        to: "ind",
-        query: req.params.word,
-      },
-    });
+      const resTatoeba = await axios.get(tatoeba, {
+        params: {
+          from: "jpn",
+          to: "ind",
+          query: req.params.word,
+        },
+      });
 
-    const result = {
-      kanji: resJisho.data.data[0].slug,
-      meanings: resJisho.data.data[0].senses
-        .map((sense) => sense.english_definitions)
-        .flat(),
-      readings: resJisho.data.data[0].japanese.map(
-        (japanese) => japanese.reading
-      ),
-      jlpt: resJisho.data.data[0].jlpt,
-      parts_of_speech: resJisho.data.data[0].senses.map(
-        (sense) => sense.parts_of_speech
-      ),
+      const result = {
+        kanji: req.params.word,
+        meanings: resJisho.data.data[0].senses
+          .map((sense) => sense.english_definitions)
+          .flat(),
+        readings: resJisho.data.data[0].japanese.map(
+          (japanese) => japanese.reading
+        ),
+        jlpt: resJisho.data.data[0].jlpt,
+        parts_of_speech: resJisho.data.data[0].senses.map(
+          (sense) => sense.parts_of_speech
+        ),
 
-      examples: resTatoeba.data.results.map((result) => ({
-        text: result.text,
-        translations: result.translations
-          .flat()
-          .map((translation) => translation.text),
-        html: result.transcriptions[0].html,
-      })),
-    };
-
-    const fileData = fs.readFileSync(filePath, "utf-8");
-    const jsonData = JSON.parse(fileData);
-    // 2. Cek apakah sudah ada kanji yang sama
-    const isExist = jsonData.some((item) => item.kanji === result.kanji);
-
-    if (!isExist) {
-      // 3. Push jika belum ada
-      jsonData.push(result);
-
-      // 4. Simpan kembali ke file
-      fs.writeFileSync(filePath, JSON.stringify(jsonData, null, 2));
-      console.log("✅ Data berhasil ditambahkan!");
-      res.send(result);
-    } else {
-      console.log("⚠️ Data sudah ada, tidak ditambahkan ulang.");
-      res.send(result);
-      // res.send(jsonData);
+        examples: resTatoeba.data.results.map((result) => ({
+          text: result.text,
+          translations: result.translations
+            .flat()
+            .map((translation) => translation.text),
+          html: result.transcriptions[0].html,
+        })),
+      };
+      await client.sAdd("words", JSON.stringify(result));
     }
+
+    const result = await client.sInter("words");
+    const data = result.filter((v) => JSON.parse(v).kanji == req.params.word);
+    res.send(JSON.parse(data));
   } catch (error) {
     console.error(error);
   }
@@ -172,46 +165,6 @@ app.get("/api/kanji/level/:level", async (req, res) => {
     res.status(500).send({ error: "Gagal mengambil data dari kanjiapi" });
   }
 });
-
-// instance.get("/kanji/level/jlpt-5").then((res) => {
-//   Promise.all(res.data.map((v: string) => instance.get("/kanji/" + v))).then(
-//     (responses) => {
-//       const newData = responses.map((res) => res.data);
-//       const combined = [...mockKanjiData, ...newData];
-//       console.log("Data lengkap:", combined);
-//     }
-//   );
-// });
-
-// app.get("/api/kanji/level/:level", async (req, res) => {
-//   const baseUrl = "https://kanjiapi.dev/v1/kanji";
-//   const cacheKey = `kanji-level-${req.params.level}`;
-
-//   const cached = cache.get(cacheKey);
-//   if (cached) {
-//     console.log(cached);
-//     return res.send(cached); // langsung kirim cache
-//   }
-
-//   try {
-//     const response = await axios.get(`${baseUrl}/${req.params.level}`);
-//     Promise.all(
-//       response.data.map((val) => axios.get(`${baseUrl}/${val}`))
-//     ).then((responses) => {
-//       const result = responses.map((res) => res.data);
-//       // console.log(result);
-//     });
-//     // response.data.map(async (v) => {
-//     //   const kanji = await axios.get(`${baseUrl}/${v}`);
-//     //   // console.log(kanji.data);
-//     //   // return kanji.data;
-//     // });
-//     res.send(response.data);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send(error);
-//   }
-// });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
