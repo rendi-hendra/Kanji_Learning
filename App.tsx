@@ -22,7 +22,7 @@ export default function App() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    instance.get<Kanji[]>("/kanji/level/jlpt-5").then((res) => {
+    instance.get<Kanji[]>("kanji/level/jlpt-5").then((res) => {
       setKanjiList(res.data);
     });
 
@@ -63,7 +63,7 @@ export default function App() {
 
   function handleKanjiClick(kanji: Kanji) {
     setSelectedKanji(kanji);
-    instance.get(`/words/${kanji.kanji}`).then((res) => {
+    instance.get(`kanji/${kanji.kanji}`).then((res) => {
       setWords(res.data);
     });
   }
@@ -173,6 +173,7 @@ export default function App() {
                   className="text-primary font-bold text-5xl mb-5"
                   dangerouslySetInnerHTML={{ __html: example.html }}
                 />
+                <div>{example.text}</div>
                 {example.translations.map((translation, i) => (
                   <p key={i} className="text-2xl text-muted-foreground">
                     {translation}

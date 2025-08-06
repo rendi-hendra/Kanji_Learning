@@ -19,13 +19,13 @@ await client.connect();
 
 // const jisho = new JishoAPI();
 
-// import { Credentials, Translator } from "@translated/lara";
+import { Credentials, Translator } from "@translated/lara";
 
-// const LARA_ACCESS_KEY_ID = "BCECQU8FDCCGASG9763KV84VKH"; // Replace with your Access Key ID
-// const LARA_ACCESS_KEY_SECRET = "2AwCk6LZMxocPJLJKGr3G0_poaJUvx55YP-5JGK0f-4"; // Replace with your Access Key SECRET
+const LARA_ACCESS_KEY_ID = "BCECQU8FDCCGASG9763KV84VKH"; // Replace with your Access Key ID
+const LARA_ACCESS_KEY_SECRET = "2AwCk6LZMxocPJLJKGr3G0_poaJUvx55YP-5JGK0f-4"; // Replace with your Access Key SECRET
 
-// const credentials = new Credentials(LARA_ACCESS_KEY_ID, LARA_ACCESS_KEY_SECRET);
-// const lara = new Translator(credentials);
+const credentials = new Credentials(LARA_ACCESS_KEY_ID, LARA_ACCESS_KEY_SECRET);
+const lara = new Translator(credentials);
 
 // jisho.searchForExamples("夜更かし").then((result) => {
 //   console.log("Jisho Uri: " + result.uri);
@@ -44,7 +44,7 @@ await client.connect();
 
 app.post("/api/audio/:text", async (req, res) => {
   const baseURL = "http://127.0.0.1:50021";
-  const speaker = 2;
+  const speaker = 8;
   const text = req.params.text;
 
   try {
@@ -88,7 +88,52 @@ app.post("/api/audio/:text", async (req, res) => {
   }
 });
 
-app.get("/api/words/:word", async (req, res) => {
+app.get("/api/words", async (req, res) => {
+  const base = "https://jlpt-vocab-api.vercel.app/api/words";
+  const { offset } = req.query;
+
+  try {
+    const response = await axios.get(`${base}?offset=${offset ? offset : 0}`);
+
+    const cache = await client.get(`word:${offset ? offset : 0}`);
+
+    if (cache) {
+      return res.send(cache);
+    }
+
+    const translatedWords = await Promise.all(
+      response.data.words.map(async (word) => {
+        const translatedMeaning = await lara.translate(
+          word.meaning,
+          "en-US",
+          "id-ID"
+        );
+        return {
+          ...word,
+          meaning: translatedMeaning.translation,
+        };
+      })
+    );
+
+    const result = {
+      ...response.data,
+      words: translatedWords,
+    };
+
+    await client.set(`word:${offset ? offset : 0}`, JSON.stringify(result));
+
+    console.log("Cache...");
+
+    res.send({
+      ...response.data,
+      words: translatedWords,
+    });
+  } catch (error) {
+    res.status(500).send({ error });
+  }
+});
+
+app.get("/api/kanji/:kanji", async (req, res) => {
   // const kanjiapi = "https://kanjiapi.dev/v1";
   const jisho = "https://jisho.org/api/v1/search/words";
   const tatoeba = "https://tatoeba.org/en/api_v0/search";
@@ -100,7 +145,7 @@ app.get("/api/words/:word", async (req, res) => {
 
     const alreadyExists = words.some((entry) => {
       const parsed = JSON.parse(entry);
-      return parsed.kanji === req.params.word;
+      return parsed.kanji === req.params.kanji;
     });
     if (!alreadyExists) {
       const resJisho = await axios.get(jisho, {
@@ -110,7 +155,7 @@ app.get("/api/words/:word", async (req, res) => {
           Accept: "application/json, text/plain, */*",
         },
         params: {
-          keyword: req.params.word,
+          keyword: req.params.kanji,
         },
       });
 
@@ -118,7 +163,7 @@ app.get("/api/words/:word", async (req, res) => {
         params: {
           from: "jpn",
           to: "ind",
-          query: req.params.word,
+          query: req.params.kanji,
         },
       });
 
@@ -147,7 +192,7 @@ app.get("/api/words/:word", async (req, res) => {
     }
 
     const result = await client.sInter("words");
-    const data = result.filter((v) => JSON.parse(v).kanji == req.params.word);
+    const data = result.filter((v) => JSON.parse(v).kanji == req.params.kanji);
     res.send(JSON.parse(data));
   } catch (error) {
     console.error(error);
