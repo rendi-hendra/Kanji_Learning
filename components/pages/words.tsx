@@ -14,7 +14,8 @@ import {
   PaginationEllipsis,
   PaginationNext,
 } from "../ui/pagination";
-import { Input } from "../ui/input";
+import { Button, Switch } from "react-aria-components";
+
 interface Iwords {
   word: string;
   meaning: string;
@@ -128,6 +129,12 @@ export default function Words() {
               <div className="flex items-center space-x-3">
                 <BookOpen className="size-8 text-primary" />
                 <h1>Words Learning</h1>
+                <Switch className="group relative flex gap-2 items-center text-black font-semibold text-lg">
+                  <div className="flex h-[26px] w-[44px] shrink-0 cursor-default rounded-full shadow-inner bg-clip-padding border border-solid border-white/30 p-[3px] box-border transition duration-200 ease-in-out bg-yellow-600 group-pressed:bg-yellow-700 group-selected:bg-amber-800 group-selected:group-pressed:bg-amber-900 outline-hidden group-focus-visible:ring-2 ring-black">
+                    <span className="h-[18px] w-[18px] transform rounded-full bg-white shadow-sm transition duration-200 ease-in-out translate-x-0 group-selected:translate-x-[100%]" />
+                  </div>
+                  Words
+                </Switch>
               </div>
               <Badge variant="outline">{totalWords} Words</Badge>
             </div>
@@ -185,12 +192,17 @@ export default function Words() {
             <PaginationContent>
               {/* Tombol Prev */}
               <PaginationItem>
-                <PaginationPrevious
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (page > 1) setPage(page - 1);
-                  }}
-                />
+                {page > 1 ? (
+                  <PaginationPrevious
+                    className="cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (page > 1) setPage(page - 1);
+                    }}
+                  />
+                ) : (
+                  ""
+                )}
               </PaginationItem>
 
               {/* Nomor halaman + ellipsis */}
@@ -203,6 +215,7 @@ export default function Words() {
                 ) : (
                   <PaginationItem key={p}>
                     <PaginationLink
+                      className="cursor-pointer"
                       isActive={page === p}
                       onClick={(e) => {
                         e.preventDefault();
@@ -217,12 +230,17 @@ export default function Words() {
 
               {/* Tombol Next */}
               <PaginationItem>
-                <PaginationNext
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (page < totalPages) setPage(page + 1);
-                  }}
-                />
+                {page != 839 ? (
+                  <PaginationNext
+                    className="cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (page < totalPages) setPage(page + 1);
+                    }}
+                  />
+                ) : (
+                  ""
+                )}
               </PaginationItem>
             </PaginationContent>
           </Pagination>

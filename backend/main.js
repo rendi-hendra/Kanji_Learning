@@ -17,7 +17,7 @@ client.on("error", (err) => console.log("Redis Client Error", err));
 
 await client.connect();
 
-// const jisho = new JishoAPI();
+const jisho = new JishoAPI();
 
 import { Credentials, Translator } from "@translated/lara";
 
@@ -27,9 +27,9 @@ const LARA_ACCESS_KEY_SECRET = "2AwCk6LZMxocPJLJKGr3G0_poaJUvx55YP-5JGK0f-4"; //
 const credentials = new Credentials(LARA_ACCESS_KEY_ID, LARA_ACCESS_KEY_SECRET);
 const lara = new Translator(credentials);
 
-// jisho.searchForExamples("夜更かし").then((result) => {
+// jisho.searchForKanji("毎").then((result) => {
 //   console.log("Jisho Uri: " + result.uri);
-//   console.log();
+//   console.log(result);
 
 //   for (let i = 0; i < 3; ++i) {
 //     let example = result.results[i];
@@ -188,11 +188,13 @@ app.get("/api/kanji/:kanji", async (req, res) => {
           html: result.transcriptions[0].html,
         })),
       };
+      console.log(result);
       await client.sAdd("words", JSON.stringify(result));
     }
 
     const result = await client.sInter("words");
     const data = result.filter((v) => JSON.parse(v).kanji == req.params.kanji);
+    console.log(data);
     res.send(JSON.parse(data));
   } catch (error) {
     console.error(error);
