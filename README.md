@@ -5,6 +5,7 @@ Aplikasi web untuk belajar Kanji Jepang dengan fitur pencarian, filter tingkat J
 ## Fitur
 
 - 📚 **Library Kanji**: Koleksi kanji dengan informasi lengkap
+- 📚 **Library Words**: Koleksi kosa kata dengan informasi lengkap
 - 🔍 **Pencarian**: Cari berdasarkan kanji, arti, atau cara baca
 - 📊 **Filter JLPT**: Filter berdasarkan tingkat JLPT (N5-N1)
 - 🎯 **Mode Latihan**: Latihan flashcard interaktif
