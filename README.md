@@ -1,4 +1,4 @@
-# Kanji Learning App
+# Kanji Learning App Beta
 
 Aplikasi web untuk belajar Kanji Jepang dengan fitur pencarian, filter tingkat JLPT, dan mode latihan interaktif.
 
