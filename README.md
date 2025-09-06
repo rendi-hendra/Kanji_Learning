@@ -11,6 +11,7 @@ Aplikasi web untuk belajar Kanji Jepang dengan fitur pencarian, filter tingkat J
 - 🎯 **Mode Latihan**: Latihan flashcard interaktif
 - 📱 **Responsive**: Mendukung desktop dan mobile
 - 🌓 **Dark Mode**: Tema gelap dan terang
+- 😁 **On Going**
 
 ## Screenshot
 
